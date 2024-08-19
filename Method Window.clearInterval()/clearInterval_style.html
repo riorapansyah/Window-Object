@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <h1>Pesan sekarang juga, senin harga naik!!</h1>
+    <button id="stop">Stop Animasi</button>
+    <script>
+      h1Node = document.querySelector("h1");
+      stopNode = document.getElementById("stop");
+
+      const buatEfek = () => {
+        if (h1Node.style.color === "red") {
+          h1Node.style.color = "blue";
+        } else {
+          h1Node.style.color = "red";
+        }
+      };
+      let setIntervalID = setInterval(buatEfek, 200);
+
+      stopNode.addEventListener("click", () => {
+        clearInterval(setIntervalID);
+      });
+    </script>
+  </body>
+</html>
